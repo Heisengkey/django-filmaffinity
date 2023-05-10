@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+<h1> Usuarios </h1>
+{% endblock %}
+
+{% block contenido %}
+<div class="users-list">
+    {% for user in users %}
+    <div class="user-card">
+        <h3>{{user.occupation}}, {{user.age}}</h3>
+        <p>Edad: {{user.age}}</p>
+        <p>Codigo Postal: {{user.zipCode}}</p>
+        <p>Genero: {{user.gender}}</p>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

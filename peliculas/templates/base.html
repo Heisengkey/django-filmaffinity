@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='utf-8'>
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ccc;
+        }
+
+        nav {
+            max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5em;
+            background-color: #fff;
+            border-radius: 0.5em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            background-color: #fff;
+        }
+
+        .movies-list, .users-list{
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin: auto;
+            justify-content: space-between;
+            border-radius: 0.5em;
+        }
+
+        .user-card {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 0.5em;
+        }
+
+        .movie-card h3, .movie-card h5 {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        {% block encabezado %}{% endblock %}
+        <nav>
+            <div> <a href='/'>Inicio</a></div>
+            <div> <a href='/users'>Lista de usuarios</a></div>
+            <div> <a href='/moviestop50'>Top 50 películas</a></div>
+            <div> <a href='/populate'>Carga de BD</a></div>
+        </nav>
+        <hr>
+    </header>
+    <section>
+        {% block contenido %}{% endblock %}
+    </section>
+    {% block pie %}{% endblock %}
+</body>
+
+</html>
